@@ -15,7 +15,7 @@ import os
 
 class Teleschool:
     def __init__(self):
-        API_TOKEN = '1294342284:AAG2P0xfKKS8DvSrFka267QUN6z9by0B8o4'
+        API_TOKEN = 'Token'
         db_session.global_init("db/blogs.db")
         self.db_sess = db_session.create_session()
         self.profile_status = {'name': {'reg_status': 'login_part_name', 'ch_status': 'change_name',
@@ -220,7 +220,7 @@ class Teleschool:
             src = '/home/harittim/Telemeetting/photo_exp/' + str(message.chat.id) + '.jpg'
             with open(src, 'wb') as new_file:
                 new_file.write(downloaded_file)
-            y = yadisk.YaDisk(token='AQAAAABTaLkPAAcBIzwlfn8hlUGsueJVmvphHzQ')
+            y = yadisk.YaDisk(token='Token')
             y.upload(src, '/Telemeetting/' + str(a) + '.jpg')
             a += 1
             with open('photo_num.txt', 'w') as outfile:
@@ -359,7 +359,7 @@ class Teleschool:
         else:
             user = self.db_sess.query(User).filter(User.id == iden).first()
             user.status = 'pending'
-            api = '1335424699:AAHo5fuxgVbdWS8OOAzsqMIPv1IXqrNuMXw'
+            api = 'Token'
             bot = telebot.TeleBot(api, threaded=False)
             keyboard_start = types.InlineKeyboardMarkup()
             keyboard_start_1 = types.InlineKeyboardButton(text='Добавить', callback_data='add_user_' + str(iden))
