@@ -58,7 +58,7 @@ class Teleschool:
             src = '/home/harittim/Telemeetting/photo_exp/' + str(message.chat.id) + '.mp4'
             with open(src, 'wb') as new_file:
                 new_file.write(downloaded_file)
-            y = yadisk.YaDisk(token='AQAAAABTaLkPAAcBIzwlfn8hlUGsueJVmvphHzQ')
+            y = yadisk.YaDisk(token='token')
             y.upload(src, '/Telemeetting/' + str(a) + '.mp4')
             a += 1
             with open('photo_num.txt', 'w') as outfile:
